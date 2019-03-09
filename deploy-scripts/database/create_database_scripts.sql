@@ -3,7 +3,7 @@ $DO$
 DECLARE
   _DB TEXT := 'bookmanagementsystem';
   _USER TEXT := '[user_name]';
-  _PASSWORD TEXT := '[user_name]';
+  _PASSWORD TEXT := '[password]';
 BEGIN
   CREATE EXTENSION IF NOT EXISTS DBLINK; -- ENABLE EXTENSION 
   IF EXISTS (SELECT 1 FROM PG_DATABASE WHERE DATNAME = _DB) THEN

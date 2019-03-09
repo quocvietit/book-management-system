@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/book")
 public class BookController {
 
 	@Autowired
@@ -23,14 +24,8 @@ public class BookController {
 
 	@GetMapping()
 	public Book getBookDetail(
-			@PathVariable String title
 	){
-		return bookService.getBookDetail(title);
+		return bookService.getBookDetail("ahihi");
 	}
-
-//	@GetMapping()
-//	public String Test(){
-//		return "dd";
-//	}
 
 }

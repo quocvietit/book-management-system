@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 public class BookService {
@@ -24,16 +23,12 @@ public class BookService {
 	@Autowired
 	private BookRepository bookRepository;
 
-	public Book getBookDetail(UUID bookId){
-		Optional<Book> bookOptional =bookRepository.findById(bookId);
-
-		return 	getBook(bookOptional);
-	}
+//	public Book getBookDetail(UUID bookId){
+//		return bookRepository.findById(bookId);
+//	}
 
 	public Book getBookDetail(String bookTitle){
-		Optional<Book> bookOptional = bookRepository.findBookByTitle(bookTitle);
-
-		return getBook(bookOptional);
+		return  bookRepository.findBookByTitle(bookTitle);
 	}
 
 	public Book addBook(Book book){
