@@ -9,10 +9,10 @@
 
 package com.vqv.book.controllers;
 
+import com.vqv.book.entities.BookDTO;
 import com.vqv.book.services.BookService;
 import com.vqv.common.models.Book;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,10 +22,23 @@ public class BookController {
 	@Autowired
 	private BookService bookService;
 
-	@GetMapping()
+	@GetMapping("/{title}/detail")
 	public Book getBookDetail(
+			@PathVariable(name = "title") String title
+	) {
+		return bookService.getBookDetail(title);
+	}
+
+	@PostMapping("/add")
+	public Book addBook(
+		@RequestBody BookDTO bookDTO
 	){
-		return bookService.getBookDetail("ahihi");
+		Book book = new Book();
+		book.setTitle(bookDTO.getTitle());
+		book.setSummary(bookDTO.getSummary());
+		book.setPrice(bookDTO.getPrice());
+
+		return bookService.addBook(book);
 	}
 
 }

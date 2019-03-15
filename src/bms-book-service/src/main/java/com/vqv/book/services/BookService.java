@@ -27,25 +27,25 @@ public class BookService {
 //		return bookRepository.findById(bookId);
 //	}
 
-	public Book getBookDetail(String bookTitle){
-		return  bookRepository.findBookByTitle(bookTitle);
+	public Book getBookDetail(String bookTitle) {
+		return bookRepository.findBookByTitle(bookTitle);
 	}
 
-	public Book addBook(Book book){
-		if(ObjectUtils.isEmpty(book)){
+	public Book addBook(Book book) {
+		if (ObjectUtils.isEmpty(book)) {
 			return null;
 		}
 
 		Book tmpBook = this.getBookDetail(book.getTitle());
-		if(!ObjectUtils.isEmpty(tmpBook)){
+		if (!ObjectUtils.isEmpty(tmpBook)) {
 			return null;
 		}
 
 		return bookRepository.save(book);
 	}
 
-	private Book getBook(Optional<Book> bookOptional){
-		if(bookOptional.isPresent()){
+	private Book getBook(Optional<Book> bookOptional) {
+		if (bookOptional.isPresent()) {
 			return bookOptional.get();
 		}
 
