@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.vqv</groupId>
-	<artifactId>bms-account-service</artifactId>
+	<artifactId>bms-core-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bms-account-service</name>
-	<description>Account mangement system</description>
+	<name>bms-core-service</name>
+	<description>Core system</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -26,13 +26,7 @@
 			<version>${project.version}</version>
 			<scope>compile</scope>
 		</dependency>
-
-		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
-			<version>1.11</version>
-		</dependency>
-    </dependencies>
+	</dependencies>
 
 	<build>
 		<plugins>

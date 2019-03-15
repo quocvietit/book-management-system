@@ -1,3 +1,23 @@
+-------------- SERCURITY ----------------------
+-----------------------------------------------
+---------- AUTHOR TABLE -----------------------
+-----------------------------------------------
+-- DELETE IF EXITS
+DROP TABLE IF EXISTS PUBLIC.AUTHOR CASCADE;
+
+-- CREATE
+CREATE TABLE PUBLIC.AUTHOR(
+	ID UUID NOT NULL,
+	NAME CHARACTER VARYING(50) COLLATE pg_catalog."default",
+	HISTORY TEXT
+);
+
+-- ADD CONSTRAINTS
+ALTER TABLE PUBLIC.AUTHOR 
+	ADD CONSTRAINT AUTHOR_PK PRIMARY KEY (ID);
+-----------------------------------------------
+
+-------------- PRODUCT ------------------------
 -----------------------------------------------
 ---------- AUTHOR TABLE -----------------------
 -----------------------------------------------
